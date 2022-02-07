@@ -1,0 +1,2 @@
+
+    <!-- <img :src="$withBase('/image.png')" alt="Martian" style="width: 400px;"> -->
