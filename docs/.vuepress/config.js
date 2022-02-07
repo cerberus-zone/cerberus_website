@@ -1,7 +1,6 @@
 module.exports = {
   title: "Cerberus",
-  description:
-    "The first-ever extraterrestrial meme-coin coming from the Martian Zone in the Cosmos network",
+  description: "The first-ever three headed dog meme-coin in the Cosmos network",
   // head: [["link", { rel: "icon", href: "/twitter_cerberus.png" }]],
   themeConfig: {
     nav: [
