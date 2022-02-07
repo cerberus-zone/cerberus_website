@@ -1,6 +1,6 @@
 <div style="text-align: center">
+    <!-- <img :src="$withBase('/cerberuswebsite.png')" alt="Martian" style="width: 400px;"> -->
 </div>
-
 ## **AIRDROP COMING SOON**
 
 <a href="https://twitter.com/CerberusZone" target="_blank">Cerberus</a> is the first-ever three headed dog meme-coin in <a href="https://twitter.com/Cosmos" target="_blank">Cosmos network</a>
