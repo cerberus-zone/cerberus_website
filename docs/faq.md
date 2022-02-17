@@ -39,6 +39,14 @@ No there is no minimum you need staked of $HUAHUA, $ATOM, $OSMO
 
 :::
 
+::: details How do I stake $HUAHUA?
+
+Check out this guide for how to stake $HUAHUA
+
+<a href="https://www.figment.io/resources/chihuahua-staking-guide" target="_blank">Chihuahua: Staking Guide</a>
+
+:::
+
 ::: details How do I know how much Cerberus ($CRBRUS) I will receive in the airdrop?
 
 Once we do the snapshots, we will know what ratio each person will receive in each airdrop.
@@ -48,12 +56,12 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 ::: details When will the snapshots happen?
 There have been not set dates yet.
 
-- Snapshop for $HUAHUA will be announced early March 2022 (few weeks)
+- Snapshop for $HUAHUA will be announced early March 2022 (few weeks). The airdrop will not happen at that time.
 - Snapshop for $ATOM is TBD
 - Snapshop for $OSMO is TBD
   :::
 
-::: details When will the airdrops happen?
+::: details When will the airdrops/coin distribution happen?
 There have been not set dates yet.
 
 - Airdrop for $HUAHUA will be announce mid-March 2022
@@ -67,12 +75,17 @@ This airdrop will not be based on set mininum amount of $HUAHUA, $ATOM, or $OSMO
 
 Here are several simple examples of how the airdrop allocation ratio would work.
 
-- If the ratio were 1:1 that means if you held 1,000 $HUAHUA you would receive 1,000 $CRBRUS.
+<div style="color:red; font-weight: bold">These ratios are strictly for EXAMPLE ONLY!</div>
 
-- If the ratio were 1:0.5 that means if you held 1,000 $HUAHUA you would receive 500 $CRBRUS.
+- If the ratio were 1:1 and you held 1,000 $HUAHUA you would receive 1,000 $CRBRUS.
 
-- If the ratio were 1:0.25 that means if you held 1,000 $HUAHUA you would receive 250 $CRBRUS.
-  :::
+- If the ratio were 1:0.5 and you held 1,000 $HUAHUA you would receive 500 $CRBRUS.
+
+- If the ratio were 1:0.25 and you held 1,000 $HUAHUA you would receive 250 $CRBRUS.
+
+<div style="color:red; font-weight: bold">These ratios are strictly for EXAMPLE ONLY! Exact ratios to come at a later date.</div>
+
+:::
 
 ::: details How is the ratio calculated?
 
@@ -94,8 +107,8 @@ Yes, you will receive all three airdrops because you are staking all three asset
 
 There are multiple reasons behind our reason for doing the airdrop this way.
 
-- Those who are early supporters of other networks such as $HUAHUA, $ATOM, or $OSMO and invested in securing those chains by staking should be rewarded based on the merit of their efforts.
-- Avoid individuals trying to game the system by creating multiple wallet addresses and staking the minimum to claim an airdrop numerous times in different wallets. 😉
+- Those who are early supporters of other networks such as $HUAHUA, $ATOM, or $OSMO and invested in securing those chains by staking should be rewarded based on the merit of their efforts. We don't believe in getting "something for nothing."
+- Avoids individuals trying to game the system by creating multiple wallet addresses and staking the minimum to claim an airdrop numerous times in different wallets. 😉
   :::
 
 ::: details Are Twitter Giveaways the same as the $HUAHUA, $ATOM, or $OSMO Airdrops ?
