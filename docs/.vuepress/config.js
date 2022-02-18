@@ -4,7 +4,7 @@ module.exports = {
   head: [["link", { rel: "icon", href: "/website_logo.png" }]],
   themeConfig: {
     nav: [
-      { text: "Home", link: "/" },
+      { text: "Home", link: "/index/" },
       { text: "Airdrop FAQ", link: "/faq/" },
       { text: "Running a validator", link: "/running-a-validator/" },
     ],
