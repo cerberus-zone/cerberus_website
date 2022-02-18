@@ -1,2 +1,0 @@
-
-    <!-- <img :src="$withBase('/image.png')" alt="Cerberus" style="width: 400px;"> -->
