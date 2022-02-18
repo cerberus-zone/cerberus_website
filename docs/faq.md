@@ -40,7 +40,7 @@ No there is no minimum you need staked of $HUAHUA, $ATOM, $OSMO
 :::
 
 ::: details Is there a particular set of validators that are eligible?
-At this time we don't have a specific set of validators that we are targetting
+At this time, we don't have a specific set of validators that we are targetting for the airdrops. Our goal is to include as many people as possible in the airdrops. If we target a specific set of validators, we will let everyone know with plenty of time to validate those validators if they choose to do so.
 :::
 
 ::: details How do I stake $HUAHUA?
@@ -53,7 +53,7 @@ Check out this guide for how to stake $HUAHUA
 
 ::: details How do I know how much Cerberus ($CRBRUS) I will receive in the airdrop?
 
-At this time, we don't have a specific set of validators that we are targetting for the airdrops. Our goal is to include as many people as possible in the airdrops. If we target a specific set of validators, we will let everyone know with plenty of time to validate those validators if they choose to do so.
+Once we do the snapshots, we will know what ratio each person will receive in each airdrop.
 
 :::
 
