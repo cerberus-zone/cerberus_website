@@ -8,17 +8,17 @@ In developement - not complete
 
 # **Running a Cerberus validator**
 
-<div style="text-align: center; margin-top:25px">
+<div style="text-align: center; margin-top:25px; margin-bottom:50px">
     <a href="https://twitter.com/CerberusZone" target="_blank" >
         <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
     </a>
 </div>
 
-## Purpose
+[[toc]]
+
+## Purpose of document
 
 This document will outline step by step how to set up and configure a Cerberus validator to run on a Linux-based OS.
-
-[[toc]]
 
 ## Validator Installation Steps
 
@@ -80,7 +80,9 @@ make install && cd ~/go/bin && sudo cp cerberusd /usr/local/bin
 
 Having the _cerberusd_ binary located in your _/usr/local/bin_ will ensure that when you type _cerberusd_ your OS will find the executable binary.
 
-#### 2. Initiate Chain
+## Configuring Cerberus node
+
+### Initiate Chain
 
 This step will create all the configuration files needed to run your validator node. The _MONIKER_NAME_ name can be whatever you would like it to be.
 
@@ -91,7 +93,7 @@ cerberusd init $MONIKER_NAME --chain-id cerberus-1
 
 After running the commands above, all node configuration files have been set up.
 
-#### 3. Download the Genesis file
+### Download the Genesis file
 
 To download the genesis file, you will want to run the commands below. The genesis file is required to join the validator node to the Cerberus blockchain.
 
@@ -101,7 +103,7 @@ wget -O $HOME/.cerberus/config/genesis.json \
 https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/genesis.json
 ```
 
-#### 4. Create keys/Cerberus wallet address
+### Create keys/Cerberus wallet address
 
 The key-name can be whatever you would like it to be. You probably want to name it based on what the wallet address will be used for.
 
@@ -217,10 +219,50 @@ After running the command above, you will see a screen like the one below.
     </a>
 </div>
 
-## Genesis Validators ONLY
+## Genesis Validator Setup
 
 ::: warning Note
-If you are not running a Genesis Validator, you can disregard the below steps.
+Genesis Validators only - If you are not running a Genesis Validator, you can disregard the below steps.
 :::
 
 ### Genesis Validators additional steps
+
+This secton will outline how to create a gentx to run a genesis validator. After the chain goes live this documentaton will no longer be valid.
+
+::: warning Previous Steps required
+You should have completed all the steps outline above before going through these steps.
+:::
+
+### Creating a genesis account
+
+You will run the command below to create a genesis account. The example below shows creating a genesis account giving each validator 5000000100000ucrbrus.
+
+Where _**key-name**_ is you can use the key name that you created in the step <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a>
+
+```bash
+cerberusd add-genesis-account <key-name> 5000000100000ucrbrus
+```
+
+### Create the gentx
+
+The commend below will generate the gentx file that is needed to run as a genesis validator.
+
+#### Commands Parameters
+
+_**moniker**_ you will use the moniker you set in the step <a href="#initiate-chain">Initiate Chain</a>
+
+_**description**_ you will set a description for your Cerberus validator node.
+
+_**security-contact**_ you will add the security contact email address for your validator.
+
+```bash
+cerberusd gentx <key-name> 5000000000000ucerberusd \
+--chain-id cerberus-1 \
+--moniker=$MONIKER_NAME \
+--commission-max-change-rate=0.05 \
+--commission-max-rate=0.20 \
+--commission-rate=0.05 \
+--details="XXXXXXXX" \
+--security-contact="XXXXXXXX" \
+--website="XXXXXXXX"
+```
