@@ -5,7 +5,9 @@ lang = "en-US"
 ---
 
 <div style="text-align: center">
-    <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+     <a href="https://twitter.com/CerberusZone" target="_blank" >
+        <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+    </a>
 </div>
 
 <div class="social">

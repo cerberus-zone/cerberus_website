@@ -8,8 +8,10 @@ In developement - not complete
 
 # **Running a Cerberus validator**
 
-<div style="text-align: center">
-    <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+<div style="text-align: center; margin-top:25px">
+    <a href="https://twitter.com/CerberusZone" target="_blank" >
+        <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+    </a>
 </div>
 
 ## Purpose
@@ -20,9 +22,9 @@ This document will outline step by step how to set up and configure a Cerberus v
 
 ## Validator Installation Steps
 
-#### 1. Install Prerequisites
+### Installing Prerequisites
 
-The following are necessary to build the cerberus binary from source. It will install all the needed dependencies to complete the installation of the Cerberus blockchain node software.
+The following are necessary to build the Cerberus binary from the source. It will install all the needed dependencies to complete the Cerberus blockchain node software installation.
 
 ```bash:
 # update the local package list and install any available upgrades
@@ -32,10 +34,10 @@ sudo apt-get install make build-essential gcc git jq chrony -y
 ```
 
 ::: warning Note
-If you are using a Red Hat distro of Linux you will have to run your commands using _yum_. See example below.
+If running a Red Hat distro of Linux, you will have to run your commands using _yum_. See the example below.
 :::
 
-Example using yum package manager. Going forward the remainder of the documentation all instructions will be using _apt-get_.
+Example using yum package manager. Going forward, the remainder of the documentation all instructions will be using _apt-get_.
 
 ```bash:
 # update the local package list and install any available upgrades
@@ -44,7 +46,7 @@ sudo yum update && sudo apt upgrade -y
 sudo yum install make build-essential gcc git jq chrony -y
 ```
 
-#### 2. Installing Go from source
+### Installing Go from source
 
 ```bash:
 cd $HOME && sudo wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
@@ -61,7 +63,7 @@ Alternatively, you can follow the instructions [here](https://golang.org/doc/ins
 
 #### 1. Clone repository
 
-Note be sure you are in $HOME directory, if not run:
+Note be sure you are in $HOME directory; if not run:
 
 ```bash:
 cd $HOME
@@ -76,22 +78,22 @@ git checkout latest
 make install && cd ~/go/bin && sudo cp cerberusd /usr/local/bin
 ```
 
-Having the _cerberusd_ binary located in your _/usr/local/bin_ will ensure when you type _cerberusd_ your OS will find the executable binary.
+Having the _cerberusd_ binary located in your _/usr/local/bin_ will ensure that when you type _cerberusd_ your OS will find the executable binary.
 
 #### 2. Initiate Chain
 
-This step will create all the needed configuration files needed to run your validator node. The _MONIKER_NAME_ name can be whatever you would like it to be.
+This step will create all the configuration files needed to run your validator node. The _MONIKER_NAME_ name can be whatever you would like it to be.
 
 ```bash:
 export MONIKER_NAME=cerberus_validator
 cerberusd init $MONIKER_NAME --chain-id cerberus-1
 ```
 
-After running the commands above all node configuration files have been setup.
+After running the commands above, all node configuration files have been set up.
 
 #### 3. Download the Genesis file
 
-To download the genesis file you will want to run the commands below. The genesis file is required for your to join your validator node to the Cerberus blockchain.
+To download the genesis file, you will want to run the commands below. The genesis file is required to join the validator node to the Cerberus blockchain.
 
 ```bash:
 cd $HOME/.cerberus/config/
@@ -117,17 +119,19 @@ Create key command example
 cerberusd keys add personal_cerberus_wallet
 ```
 
-This will generated mnemonics like most blockchain wallets. You will want to store this is in a safe place. We recommend against storing your mnemonics backup in cloud storage. The mnemonics will not be displayed again on the screen once you close the terminal window.
+The command above will generate mnemonics like most blockchain wallets. You will want to store this is in a safe place. We recommend against storing your mnemonics backup in cloud storage. The mnemonics will not be displayed again on the screen once you close the terminal window.
 
-#### 5. Starting Cerberus Validator Node
+## Starting Validator Node
 
-To have your validator node sync with the Cerberus blockchain, you must run the command below. This will start the sync process for you.
+### Starting Cerberus Validator Node
+
+You must run the command below to have your validator node sync with the Cerberus blockchain. This will start the sync process for you.
 
 ```bash:
 cerberusd start
 ```
 
-Once you have successfully had your Cerberus validator started you will want to run it as a service to ensure it is always running. See instructions for _Running Cerberus as a Service (systemd)_
+Once you have successfully tested that your Cerberus validator will start, you will want to run it as a service to ensure it is always running. See instructions for _Running Cerberus as a Service (systemd)_
 
 ### Running Cerberus as a Service (systemd)
 
@@ -177,9 +181,9 @@ sudo systemctl start cerberusd
 If you started a new terminal window to run new commands, be sure you stopped the node when you ran _**cerberusd start**_. You will receive and error when you run _**sudo systemctl start cerberusd**_ if you did not stop the node from running.
 :::
 
-### Checking Cerberus validator node status
+## Checking Cerberus validator node status
 
-#### Checking cerberusd service status
+### Checking cerberusd service status
 
 You can check the status of your Cerberus node by running the following command.
 
@@ -188,7 +192,15 @@ You can check the status of your Cerberus node by running the following command.
 sudo systemctl status cerberusd
 ```
 
-#### Viewing Cerberus validator logs
+You should then a screen similar to the screen pictured below.
+
+<div style="text-align: center">
+    <a href="docs/status.png" target="_blank">
+        <img :src="$withBase('docs/status.png')" alt="Cerberus" style="width: 1000px;">
+    </a>
+</div>
+
+### Viewing Cerberus validator logs
 
 If you want to seeing a continuous stream of logs from your Cerberus node you can run the following command.
 
@@ -197,8 +209,18 @@ If you want to seeing a continuous stream of logs from your Cerberus node you ca
 sudo journalctl -u cerberusd -f
 ```
 
-### Genesis Validators additional steps
+After runing the command abov you will see a screen like the one below.
+
+<div style="text-align: center">
+    <a href="docs/output.png" target="_blank">
+        <img :src="$withBase('docs/output.png')" alt="Cerberus" style="width: 1000px;">
+    </a>
+</div>
+
+## Genesis Validators ONLY
 
 ::: warning Note
 If you are not running a Genesis Validator you can disregard the steps outlined below.
 :::
+
+### Genesis Validators additional steps

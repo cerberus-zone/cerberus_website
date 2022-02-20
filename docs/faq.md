@@ -7,10 +7,12 @@ lang = "en-US"
 # Cerberus ($CRBRUS) Airdrop FAQ
 
 <div style="text-align: center">
-    <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+    <a href="https://twitter.com/CerberusZone" target="_blank" >
+        <img :src="$withBase('/website_logo.png')" alt="Cerberus" style="width: 500px;">
+    </a>
 </div>
 
-This purpose of this page is to answer the most common questions we are recieving about the $CRBRUS airdrop.
+The purpose of this page is to answer the most common questions we are receiving about the $CRBRUS airdrop.
 
 ::: details Who will be eligible to receive the airdrops?
 The current plan is for those staking $ATOM, $HUAHUA, or $OSMO to receive the airdrops.
