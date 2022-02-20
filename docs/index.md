@@ -38,4 +38,10 @@ Follow us on Twitter <a href="https://twitter.com/CerberusZone" target="_blank">
     <a href="https://discord.gg/u95WW9SKda" target="_blank">
         <img :src="$withBase('/discord.png')" alt="Cerberus" style="width: 40px;">
     </a>
+    <a href="https://github.com/cerberus-zone?tab=repositories" target="_blank">
+        <img :src="$withBase('/github.png')" alt="Cerberus" style="width: 50px;">
+    </a>
+    <a href="https://medium.com/@cerberus_zone/cerberus-crbrus-airdrop-coming-to-the-cosmos-network-9911c780dcdd" target="_blank">
+        <img :src="$withBase('/medium.png')" alt="Cerberus" style="width: 100px;">
+    </a>
 </div>
