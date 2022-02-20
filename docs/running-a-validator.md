@@ -167,7 +167,7 @@ WantedBy=multi-user.target
 
 #### 3. Start _cerberusd_ service
 
-Next, run the commands below to ensure that the service restart when you restart the server. The second commands starts the _**cerberusd**_ service.
+Next, run the commands below to ensure that the service restart when you restart the server. The second command starts the _**cerberusd**_ service.
 
 ```bash:
 # Enable service to start when server starts
@@ -202,14 +202,14 @@ You should then a screen similar to the screen pictured below.
 
 ### Viewing Cerberus validator logs
 
-If you want to seeing a continuous stream of logs from your Cerberus node you can run the following command.
+If you want to see a continuous stream of logs from your Cerberus node, you can run the following command.
 
 ```bash:
 # will show you a continous stream of logs from your node.
 sudo journalctl -u cerberusd -f
 ```
 
-After runing the command abov you will see a screen like the one below.
+After running the command above, you will see a screen like the one below.
 
 <div style="text-align: center">
     <a href="docs/output.png" target="_blank">
@@ -220,7 +220,7 @@ After runing the command abov you will see a screen like the one below.
 ## Genesis Validators ONLY
 
 ::: warning Note
-If you are not running a Genesis Validator you can disregard the steps outlined below.
+If you are not running a Genesis Validator, you can disregard the below steps.
 :::
 
 ### Genesis Validators additional steps
