@@ -14,7 +14,7 @@ In developement - not complete
     </a>
 </div>
 
-[[toc]]
+<!-- [[toc]] -->
 
 ## Coming Soon
 
