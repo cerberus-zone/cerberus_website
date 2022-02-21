@@ -16,6 +16,7 @@ In developement - not complete
 
 [[toc]]
 
+<!--
 ## Purpose of document
 
 This document will outline step by step how to set up and configure a Cerberus validator to run on a Linux-based OS.
@@ -265,4 +266,4 @@ cerberusd gentx <key-name> 5000000000000ucerberusd \
 --details="XXXXXXXX" \
 --security-contact="XXXXXXXX" \
 --website="XXXXXXXX"
-```
+``` -->
