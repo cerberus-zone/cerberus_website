@@ -205,7 +205,7 @@ sudo systemctl start cerberusd
 ```
 
 ::: warning Note
-If you started a new terminal window to run new commands, be sure you stopped the node when you ran _**cerberusd start**_. You will receive and error when you run _**sudo systemctl start cerberusd**_ if you did not stop the node from running.
+If you started a new terminal window to run further commands, be sure you stopped the node when you ran cerberusd start. You would receive an error when you run sudo systemctl start cerberusd if you did not stop the node from running.
 :::
 
 ## Checking Cerberus validator node status
@@ -229,7 +229,7 @@ You should then a screen similar to the screen pictured below.
 
 ### Viewing Cerberus validator logs
 
-If you want to see a continuous stream of logs from your Cerberus node, you can run the following command.
+You can run the following command if you want to see a continuous stream of logs from your Cerberus node.
 
 ```bash:
 # will show you a continous stream of logs from your node.
@@ -252,10 +252,10 @@ Genesis Validators only - If you are not running a Genesis Validator, you can di
 
 ### Genesis Validators additional steps
 
-This secton will outline how to create a gentx to run a genesis validator. After the chain goes live this documentaton will no longer be valid.
+This section will outline creating a gentx to run a genesis validator. After the chain goes live, this documentation will no longer be valid.
 
 ::: warning Previous Steps required
-You should have completed all the steps outline above before going through these steps.
+You should have completed all the steps outlined above before going through these steps.
 :::
 
 ### Creating a genesis account
@@ -270,7 +270,7 @@ cerberusd add-genesis-account <key-name> 5000000000000ucrbrus
 
 ### Create the gentx
 
-The commend below will generate the gentx file that is needed to run as a genesis validator.
+The commend below will generate the gentx file needed to run as a genesis validator.
 
 #### **Commands Parameters**
 
