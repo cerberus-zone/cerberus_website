@@ -260,7 +260,7 @@ You should have completed all the steps outlined above before going through thes
 
 ### Creating a genesis account
 
-You will run the command below to create a genesis account. The example below shows creating a genesis account giving each validator 5000000100000ucrbrus.
+You will run the command below to create a genesis account. The example below shows creating a genesis account giving each validator 5000000000000ucrbrus.
 
 Where _**key-name**_ is you can use the key name that you created in the step <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a>
 
