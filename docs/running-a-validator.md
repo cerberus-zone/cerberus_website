@@ -14,11 +14,10 @@ In developement - not complete
     </a>
 </div>
 
-<!-- [[toc]] -->
+[[toc]]
 
 ## Coming Soon
 
-<!--
 ## Purpose of document
 
 This document will outline step by step how to set up and configure a Cerberus validator to run on a Linux-based OS.
@@ -44,7 +43,7 @@ Example using yum package manager. Going forward, the remainder of the documenta
 
 ```bash:
 # update the local package list and install any available upgrades
-sudo yum update && sudo apt upgrade -y
+sudo yum update && sudo yum upgrade -y
 # install toolchain and ensure accurate time synchronization
 sudo yum install make build-essential gcc git jq chrony -y
 ```
@@ -53,7 +52,7 @@ sudo yum install make build-essential gcc git jq chrony -y
 
 ```bash:
 cd $HOME && sudo wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
 ```
@@ -78,6 +77,8 @@ Next, run the commands below.
 git clone https://github.com/cerberus-zone/cerberus.git
 cd cerberus
 git checkout latest
+
+# this step may take several minutes to complete
 make install && cd ~/go/bin && sudo cp cerberusd /usr/local/bin
 ```
 
@@ -94,7 +95,28 @@ export MONIKER_NAME=cerberus_validator
 cerberusd init $MONIKER_NAME --chain-id cerberus-1
 ```
 
+You should see output similar to the image below.
+
+<div style="text-align: center">
+    <a href="docs/chain_init.png" target="_blank">
+        <img :src="$withBase('docs/chain_init.png')" alt="Cerberus" style="width: 1000px;">
+    </a>
+</div>
+
 After running the commands above, all node configuration files have been set up.
+
+### Setting Persistent Peers
+
+In this section you will add peers to begin communicating with the Cerberus blockchain.
+
+::: warning Note
+This section will be updated at a later date after the main Cerberus chain has launched.
+:::
+
+```bash
+sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656"/g' $HOME/.cerberus/config/config.toml
+sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656"/g' $HOME/.cerberus/config/config.toml
+```
 
 ### Download the Genesis file
 
@@ -121,7 +143,7 @@ Create key command example
 
 ```bash:
 # To create new keypair - make sure you save the mnemonics!
-cerberusd keys add personal_cerberus_wallet
+cerberusd keys add cerberus_validator_key
 ```
 
 The command above will generate mnemonics like most blockchain wallets. You will want to store this is in a safe place. We recommend against storing your mnemonics backup in cloud storage. The mnemonics will not be displayed again on the screen once you close the terminal window.
@@ -243,14 +265,18 @@ You will run the command below to create a genesis account. The example below sh
 Where _**key-name**_ is you can use the key name that you created in the step <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a>
 
 ```bash
-cerberusd add-genesis-account <key-name> 5000000100000ucrbrus
+cerberusd add-genesis-account <key-name> 5000000000000ucrbrus
 ```
 
 ### Create the gentx
 
 The commend below will generate the gentx file that is needed to run as a genesis validator.
 
-#### Commands Parameters
+#### **Commands Parameters**
+
+_**key-name**_ is the key-name/wallet that you will use to fund the validator
+
+Where _**key-name**_ is you can use the key name that you created in the step <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a>
 
 _**moniker**_ you will use the moniker you set in the step <a href="#initiate-chain">Initiate Chain</a>
 
@@ -259,7 +285,7 @@ _**description**_ you will set a description for your Cerberus validator node.
 _**security-contact**_ you will add the security contact email address for your validator.
 
 ```bash
-cerberusd gentx <key-name> 5000000000000ucerberusd \
+cerberusd gentx <key-name> 4000000000000ucerberusd \
 --chain-id cerberus-1 \
 --moniker=$MONIKER_NAME \
 --commission-max-change-rate=0.05 \
@@ -268,4 +294,11 @@ cerberusd gentx <key-name> 5000000000000ucerberusd \
 --details="XXXXXXXX" \
 --security-contact="XXXXXXXX" \
 --website="XXXXXXXX"
-``` -->
+```
+
+### Submit Pull Request with Gentx and peed id
+
+1.  Copy the contents of ${HOME}/.cerberus/config/gentx/gentx-XXXXXXXX.json
+2.  Fork the repository
+3.  Create a file gentx-{{VALIDATOR_NAME}}.json under the networks/mainnet/gentx folder in the forked repo, paste the copied text into the file
+4.  Create a file gentx-{{VALIDATOR_NAME}}.json under the networks/mainnet/gentx folder in the forked repo, paste the copied text into the file
