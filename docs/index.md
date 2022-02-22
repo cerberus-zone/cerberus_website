@@ -10,6 +10,8 @@ lang = "en-US"
     </a>
 </div>
 
+## **AIRDROP COMING SOON**
+
 <div class="social">
     <a href="https://twitter.com/CerberusZone" target="_blank">
         <img :src="$withBase('/twitter.png')" alt="Cerberus" style="width: 30px;">
@@ -20,12 +22,14 @@ lang = "en-US"
     <a href="https://github.com/cerberus-zone?tab=repositories" target="_blank">
         <img :src="$withBase('/github.png')" alt="Cerberus" style="width: 50px;">
     </a>
+     <a href="https://t.me/cerberus_zone_group" target="_blank" alt="Telegram Group">
+        <img :src="$withBase('/tg.png')" alt="Cerberus" style="width: 27px;">
+    </a>
     <a href="https://medium.com/@cerberus_zone/cerberus-crbrus-airdrop-coming-to-the-cosmos-network-9911c780dcdd" target="_blank">
         <img :src="$withBase('/medium.png')" alt="Cerberus" style="width: 100px;">
     </a>
+   
 </div>
-
-## **AIRDROP COMING SOON**
 
 ### About Cerberus ($CRBRUS)
 
