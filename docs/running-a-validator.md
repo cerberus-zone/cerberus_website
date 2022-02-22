@@ -4,8 +4,6 @@ description = "Documentation for running a Cerberus validator"
 lang = "en-US"
 ---
 
-In developement - not complete
-
 # **Running a Cerberus validator**
 
 <div style="text-align: center; margin-top:25px; margin-bottom:50px">
