@@ -16,8 +16,6 @@ In developement - not complete
 
 [[toc]]
 
-## Coming Soon
-
 ## Purpose of document
 
 This document will outline step by step how to set up and configure a Cerberus validator to run on a Linux-based OS.
@@ -119,6 +117,10 @@ sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656"/
 ```
 
 ### Download the Genesis file
+
+::: warning Note
+The current genesis file is for development only. Once the chain goes live the genesis.json will be updated.
+:::
 
 To download the genesis file, you will want to run the commands below. The genesis file is required to join the validator node to the Cerberus blockchain.
 
