@@ -14,6 +14,10 @@ lang = "en-US"
 
 The purpose of this page is to answer the most common questions we are receiving about the $CRBRUS airdrop.
 
+::: details When will the Cerberus main chain launch?
+The Cerberus chain will launch on March 15, 2022.
+:::
+
 ::: details Who will be eligible to receive the airdrops?
 The current plan is for those staking $ATOM, $HUAHUA, or $OSMO to receive the airdrops.
 :::
@@ -57,10 +61,6 @@ Check out this guide for how to stake $HUAHUA
 
 Once we do the snapshots, we will know what ratio each person will receive in each airdrop.
 
-:::
-
-::: details When will the Cerberus main chain launch?
-Sometime between the middle and end of March 2022.
 :::
 
 ::: details When will the snapshots happen?

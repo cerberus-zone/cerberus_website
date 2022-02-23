@@ -8,7 +8,7 @@
     <link rel="icon" href="/website_logo.png">
     <meta name="description" content="Documentation for running a Cerberus validator">
     
-    <link rel="preload" href="/assets/css/0.styles.1353369c.css" as="style"><link rel="preload" href="/assets/js/app.8a7120ae.js" as="script"><link rel="preload" href="/assets/js/2.a60af671.js" as="script"><link rel="preload" href="/assets/js/9.25003c65.js" as="script"><link rel="prefetch" href="/assets/js/3.1e97dab3.js"><link rel="prefetch" href="/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/assets/js/7.311455d3.js"><link rel="prefetch" href="/assets/js/8.ba109c6f.js">
+    <link rel="preload" href="/assets/css/0.styles.1353369c.css" as="style"><link rel="preload" href="/assets/js/app.f7335d5d.js" as="script"><link rel="preload" href="/assets/js/2.a60af671.js" as="script"><link rel="preload" href="/assets/js/9.0f3b461a.js" as="script"><link rel="prefetch" href="/assets/js/3.1e97dab3.js"><link rel="prefetch" href="/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/assets/js/7.e042f7f2.js"><link rel="prefetch" href="/assets/js/8.680499ab.js">
     <link rel="stylesheet" href="/assets/css/0.styles.1353369c.css">
   </head>
   <body>
@@ -50,9 +50,9 @@ cerberusd init $MONIKER_NAME --chain-id cerberus-1
 wget -O $HOME/.cerberus/config/genesis.json \
 https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/genesis.json
 </code></pre></div><h3 id="create-keys-cerberus-wallet-address"><a href="#create-keys-cerberus-wallet-address" class="header-anchor">#</a> Create keys/Cerberus wallet address</h3> <p>The key-name can be whatever you would like it to be. You probably want to name it based on what the wallet address will be used for.</p> <p>Create key command</p> <div class="language-bash: extra-class"><pre class="language-text"><code># To create new keypair - make sure you save the mnemonics!
-cerberusd keys add &lt;key-name&gt;
+cerberusd keys add &lt;key-name&gt; --keyring-backend os
 </code></pre></div><p>Create key command example</p> <div class="language-bash: extra-class"><pre class="language-text"><code># To create new keypair - make sure you save the mnemonics!
-cerberusd keys add cerberus_validator_key
+cerberusd keys add cerberus_validator_key --keyring-backend os
 </code></pre></div><p>The command above will generate mnemonics like most blockchain wallets. You will want to store this is in a safe place. We recommend against storing your mnemonics backup in cloud storage. The mnemonics will not be displayed again on the screen once you close the terminal window.</p> <h2 id="starting-validator-node"><a href="#starting-validator-node" class="header-anchor">#</a> Starting Validator Node</h2> <h3 id="starting-cerberus-validator-node"><a href="#starting-cerberus-validator-node" class="header-anchor">#</a> Starting Cerberus Validator Node</h3> <p>You must run the command below to have your validator node sync with the Cerberus blockchain. This will start the sync process for you.</p> <div class="language-bash: extra-class"><pre class="language-text"><code>cerberusd start
 </code></pre></div><p>Once you have successfully tested that your Cerberus validator will start, you will want to run it as a service to ensure it is always running. See instructions for <em>Running Cerberus as a Service (systemd)</em></p> <h3 id="running-cerberus-as-a-service-systemd"><a href="#running-cerberus-as-a-service-systemd" class="header-anchor">#</a> Running Cerberus as a Service (systemd)</h3> <p>This section will walk you through how to run your Cerberus validator node as a service.</p> <h4 id="_1-creating-the-cerberusd-service-file"><a href="#_1-creating-the-cerberusd-service-file" class="header-anchor">#</a> 1. Creating the cerberusd.service file</h4> <div class="language-bash: extra-class"><pre class="language-text"><code># creates the cerberusd.service file and puts it in text editor mode
 sudo touch /etc/systemd/system/cerberusd.service &amp;&amp; \
@@ -90,6 +90,6 @@ sudo journalctl -u cerberusd -f
 --security-contact<span class="token operator">=</span><span class="token string">&quot;XXXXXXXX&quot;</span> <span class="token punctuation">\</span>
 --website<span class="token operator">=</span><span class="token string">&quot;XXXXXXXX&quot;</span>
 </code></pre></div><h3 id="submit-pull-request-with-gentx-and-peed-id"><a href="#submit-pull-request-with-gentx-and-peed-id" class="header-anchor">#</a> Submit Pull Request with Gentx and peed id</h3> <ol><li>Copy the contents of <strong>${HOME}/.cerberus/config/gentx/gentx-{peerID}.json</strong></li> <li>Fork the repository</li> <li>Create a file <em><strong>gentx-{peerID}.json</strong></em> under the <em><strong>networks/mainnet/gentx</strong></em> folder in the forked repo, paste the copied text into the file</li> <li>Add <em><strong>peer_id@ip_address:port</strong></em> to the <em><strong>/networks/mainnet/peers.txt</strong></em> file</li> <li>Create a Pull Request to the main branch of the repository</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.8a7120ae.js" defer></script><script src="/assets/js/2.a60af671.js" defer></script><script src="/assets/js/9.25003c65.js" defer></script>
+    <script src="/assets/js/app.f7335d5d.js" defer></script><script src="/assets/js/2.a60af671.js" defer></script><script src="/assets/js/9.0f3b461a.js" defer></script>
   </body>
 </html>
