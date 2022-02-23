@@ -12,6 +12,10 @@ lang = "en-US"
     </a>
 </div>
 
+::: danger Cerberus chain is not live yet
+The Cerberus chain is not live yet. This document previews how you will launch a validator once the chain is launched. See some of the areas marked in yellow for things that will need to be updated once the chain goes live.
+:::
+
 [[toc]]
 
 ::: danger Cerberus chain is not live yet
