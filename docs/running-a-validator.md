@@ -287,7 +287,7 @@ _**description**_ you will set a description for your Cerberus validator node.
 _**security-contact**_ you will add the security contact email address for your validator.
 
 ```bash
-cerberusd gentx <key-name> 4000000000000ucerberusd \
+cerberusd gentx <key-name> 4000000000000ucrbrus \
 --chain-id cerberus-1 \
 --moniker=$MONIKER_NAME \
 --commission-max-change-rate=0.05 \
