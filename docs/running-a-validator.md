@@ -110,7 +110,7 @@ This section will be updated at a later date after the main Cerberus chain has l
 :::
 
 ```bash
-sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656"/g' $HOME/.cerberus/config/config.toml
+sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656,<peer_id>@<ip-address>:26656,<peer_id>@<ip-address>:26656"/g' $HOME/.cerberus/config/config.toml
 ```
 
 ### Download the Genesis file
