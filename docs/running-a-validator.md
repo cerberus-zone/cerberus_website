@@ -143,14 +143,14 @@ Create key command
 
 ```bash:
 # To create new keypair - make sure you save the mnemonics!
-cerberusd keys add <key-name>
+cerberusd keys add <key-name> --keyring-backend os
 ```
 
 Create key command example
 
 ```bash:
 # To create new keypair - make sure you save the mnemonics!
-cerberusd keys add cerberus_validator_key
+cerberusd keys add cerberus_validator_key --keyring-backend os
 ```
 
 The command above will generate mnemonics like most blockchain wallets. You will want to store this is in a safe place. We recommend against storing your mnemonics backup in cloud storage. The mnemonics will not be displayed again on the screen once you close the terminal window.
