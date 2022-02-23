@@ -59,7 +59,7 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 
 :::
 
-::: details When will the Cerberus blockchain launch?
+::: details When will the Cerberus main chain launch?
 Sometime between the middle and end of March 2022.
 :::
 
