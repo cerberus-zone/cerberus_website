@@ -248,6 +248,8 @@ After running the command above, you will see a screen like the one below.
 
 ::: warning Note
 Genesis Validators only - If you are not running a Genesis Validator, you can disregard the below steps. We will be working directly with genesis validators that were selected to coordinate the launch of the chain.
+
+DO NOT submit a pull request for gentx unless you are already working directly with the Cerberus team.
 :::
 
 ### Genesis Validators additional steps
