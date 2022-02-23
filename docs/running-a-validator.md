@@ -14,6 +14,10 @@ lang = "en-US"
 
 [[toc]]
 
+::: danger Cerberus chain is not live yet
+The Cerberus chain is not live yet. This document previews how you will launch a validator once the chain is launched. See the area marked in yellow for things that will need to be updated once the chain goes live.
+:::
+
 ## Purpose of document
 
 This document will outline step by step how to set up and configure a Cerberus validator to run on a Linux-based OS.
