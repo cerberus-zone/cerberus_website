@@ -303,4 +303,5 @@ cerberusd gentx <key-name> 4000000000000ucerberusd \
 1.  Copy the contents of ${HOME}/.cerberus/config/gentx/gentx-XXXXXXXX.json
 2.  Fork the repository
 3.  Create a file gentx-{{VALIDATOR_NAME}}.json under the networks/mainnet/gentx folder in the forked repo, paste the copied text into the file
-4.  Create a file gentx-{{VALIDATOR_NAME}}.json under the networks/mainnet/gentx folder in the forked repo, paste the copied text into the file
+4.  Add peer **peer_id@ip_address:port** to the /networks/mainnet/peers.txt file
+5.  Create a Pull Request to the main branch of the repository
