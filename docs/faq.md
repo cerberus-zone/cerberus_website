@@ -59,6 +59,10 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 
 :::
 
+::: details When will the Cerberus blockchain launch?
+Sometime between the middle and end of March 2022.
+:::
+
 ::: details When will the snapshots happen?
 There have been not set dates yet.
 
