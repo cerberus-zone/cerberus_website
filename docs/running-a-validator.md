@@ -80,7 +80,7 @@ Next, run the commands below.
 ```bash:
 git clone https://github.com/cerberus-zone/cerberus.git
 cd cerberus
-git checkout latest
+git checkout release/v1.0.0
 
 # this step may take several minutes to complete
 make install && cd ~/go/bin && sudo cp cerberusd /usr/local/bin
@@ -95,8 +95,8 @@ Having the _cerberusd_ binary located in your _/usr/local/bin_ will ensure that 
 This step will create all the configuration files needed to run your validator node. The _MONIKER_NAME_ name can be whatever you would like it to be.
 
 ```bash:
-export MONIKER_NAME=cerberus_validator
-cerberusd init $MONIKER_NAME --chain-id cerberus-1
+export MONIKER_NAME="Cerberus Validator"
+cerberusd init "${MONIKER_NAME}" --chain-id cerberus-1
 ```
 
 You should see output similar to the image below.
@@ -109,16 +109,22 @@ You should see output similar to the image below.
 
 After running the commands above, all node configuration files have been set up.
 
-### Setting Persistent Peers
+### Setting Persistent Peers in config.toml
 
 In this section you will add peers to begin communicating with the Cerberus blockchain.
 
-::: warning Note
-This section will be updated at a later date after the main Cerberus chain has launched.
-:::
+```bash
+PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/peers.txt | head -n 17 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
+```
+
+### Add Seeds nodes to config.toml
+
+In this section you will add your seed servers that will ensure your validator node has the addresses of all new validators that come online.
+
+Run the command below to add seed servers.
 
 ```bash
-sed -i 's/persistent_peers = ""/persistent_peers="<peer_id>@<ip-address>:26656,<peer_id>@<ip-address>:26656,<peer_id>@<ip-address>:26656"/g' $HOME/.cerberus/config/config.toml
+PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/seeds.txt | head -n 16 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
 ```
 
 ### Download the Genesis file
@@ -212,7 +218,9 @@ sudo systemctl start cerberusd
 ```
 
 ::: warning Note
-If you started a new terminal window to run further commands, be sure you stopped the node when you ran cerberusd start. You would receive an error when you run sudo systemctl start cerberusd if you did not stop the node from running.
+If you started a new terminal window to run further commands, be sure you stopped the node when you ran cerberusd start.
+You would receive an error when you run sudo systemctl start cerberusd if you did not stop the node from running.
+
 :::
 
 ## Checking Cerberus validator node status
@@ -251,12 +259,111 @@ After running the command above, you will see a screen like the one below.
     </a>
 </div>
 
+## Running the Create Validator command
+
+This section runs the command needed to make your Cerberus node an actual validator.
+After running the command outlined below, your node will now be a validator.
+
+::: warning Assumptions
+This section assumes you have funded your Cerberus wallet you create in the <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a> section.
+Your Cerberus account will need some $CRBRUS to stake/bond to become a validator.
+:::
+
+### create-validator command
+
+The example below shows the accepted parameters when calling the _**cerberusd tx staking create-validator**_
+
+#### **Commands Parameters**
+
+_**from**_ - this is the name of the key that was created in the <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a> section
+
+::: danger Note about "amount" parameter
+The last six digits in the number are the decimal places.
+
+Examples:
+
+- 1000000 = 1.000000 $CRBRUS
+
+- 12500000 = 12.500000 $CRBRUS
+
+- 1000000000 = 1,000.000000 $CRBRUS
+
+- 2500000000000 = 2,500,000.000000 $CRBRUS
+
+In the command below we are staking/bonding 1000000000000ucrbrus which equals 1,000,000.000000 $CRBRUS
+
+Remeber the last six digits are your decimal places
+:::
+
+_**amount**_ - The amount of $CRBRUS you would like to bond/stake to your validator.
+
+_**pubkey**_ - retreives the public key of the validator
+
+_**commission-max-change-rate**_ - the max change rate in a 24 hour period
+
+_**commission-max-rate**_ -the max commission rate the validator will take when people delegator their $CRBRUS to the validator
+
+_**commission-rate**_ - the commission rate being charged by the validator. **No validator can charge less than 5% commission and is enforced by the Cerberus node software.**
+
+_**min-self-delegation**_ - is the minimum amount of $CRBRUS a validator must delegate to its validator
+
+_**chain-id**_ - An id that identifies the Cerberus chain
+
+_**moniker**_ - This is the $MONIKER_NAME you created in the <a href="#initiate-chain">Initiate Chain</a> section
+
+_**details**_ - Here you would enter a description about your validator or a description about your validator company
+
+_**security-contact**_ - the email to a point of contact for security related emails
+
+_**website**_ - your website
+
+```bash
+cerberusd tx staking create-validator \
+  --from "<key-name>" \
+  --amount "1000000000000ucrbrus" \
+  --pubkey=$(cerberusd tendermint show-validator) \
+  --commission-max-change-rate 0.01 \
+  --commission-max-rate 0.20 \
+  --commission-rate 0.05 \
+  --min-self-delegation 1 \
+  --chain-id "cerberus-1" \
+  --moniker $MONIKER_NAME \
+  --details "Enter a description about your validation" \
+  --security-contact "security contact email" \
+  --website "www.SomeWebsite.com" -y
+```
+
+Example with values
+
+::: tip
+Before running the command below with your values, be sure you started your node in the steps found
+<a href="#running-cerberus-as-a-service-systemd">Running Cerberus as a Service (systemd)</a> section
+:::
+
+```bash
+cerberusd tx staking create-validator \
+  --from "cerberus_validator_key" \
+  --amount "1000000000000ucrbrus" \
+  --pubkey=$(cerberusd tendermint show-validator) \
+  --commission-max-change-rate 0.01 \
+  --commission-max-rate 0.20 \
+  --commission-rate 0.05 \
+  --min-self-delegation 1 \
+  --chain-id "cerberus-1" \
+  --moniker $MONIKER_NAME \
+  --details "The best validator company in the Cosmos" \
+  --security-contact "soc_team@cerberus.zone" \
+  --website "cerberus.zone" -y
+```
+
+You have now successfully created a Cerberus validator node!! :)
+
 ## Genesis Validator Setup
 
 ::: danger Note
 DO NOT submit a pull request for gentx unless you are already working directly with the Cerberus team.
 
-Genesis Validators only - If you are not running a Genesis Validator, you can disregard the below steps. We will be working directly with genesis validators that were selected to coordinate the launch of the chain.
+Genesis Validators only - If you are not running a Genesis Validator, you can disregard the below steps. We will be working directly with genesis validators selected to coordinate the launch of the chain.
 :::
 
 ### Genesis Validators additional steps
@@ -274,7 +381,7 @@ You will run the command below to create a genesis account. The example below sh
 Where _**key-name**_ is you can use the key name that you created in the step <a href="#create-keys-cerberus-wallet-address">Create keys/Cerberus wallet address</a>
 
 ```bash
-cerberusd add-genesis-account <key-name> 5000000000000ucrbrus
+cerberusd add-genesis-account <key-name> 5000000000000ucrbrus --keyring-backend os
 ```
 
 ### Create the gentx
