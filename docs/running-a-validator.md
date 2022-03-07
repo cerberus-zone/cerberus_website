@@ -114,7 +114,7 @@ After running the commands above, all node configuration files have been set up.
 In this section you will add peers to begin communicating with the Cerberus blockchain.
 
 ```bash
-PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/peers.txt | head -n 17 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
+PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/peers.txt | head -n 18 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
 ```
 
 ### Add Seeds nodes to config.toml
@@ -124,7 +124,7 @@ In this section you will add your seed servers that will ensure your validator n
 Run the command below to add seed servers.
 
 ```bash
-PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/seeds.txt | head -n 16 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
+PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/seeds.txt | head -n 2 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
 ```
 
 ### Download the Genesis file
