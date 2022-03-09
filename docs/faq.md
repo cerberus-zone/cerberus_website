@@ -64,17 +64,17 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 :::
 
 ::: details When will the snapshots happen?
-There have been not set dates yet.
 
-- Snapshop for $HUAHUA will be announced early March 2022 (few weeks). The airdrop will not happen at that time.
-- Snapshop for $ATOM is TBD
-- Snapshop for $OSMO is TBD
+- $HUAHUA snapshot -> Saturday March 12, 2022 @ 12 AM UTC
+- $ATOM snapshot -> Saturday March 12, 2022 @ 12 AM UTC
+- $OSMO snapshot -> Saturday March 12, 2022 @ 12 AM UTC
   :::
 
 ::: details When will the airdrops/coin distribution happen?
-There have been not set dates yet.
 
-- Airdrop for $HUAHUA will be announce mid-March 2022
+The airdrop dates have not been set yet.
+
+- Airdrop for $HUAHUA is TBD
 - Airdrop for $ATOM is TBD
 - Airdrop for $OSMO is TBD
   :::
