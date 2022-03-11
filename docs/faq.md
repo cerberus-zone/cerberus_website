@@ -14,12 +14,17 @@ lang = "en-US"
 
 The purpose of this page is to answer the most common questions we are receiving about the $CRBRUS airdrop.
 
+::: danger CEX Validators
+
+If you are staking with a centralized exchanges validator such as Binance, Coinbase, etc you will not receive the Cerberus Airdrop.
+:::
+
 ::: details When will the Cerberus main chain launch?
 The Cerberus chain will launch on March 15, 2022.
 :::
 
 ::: details Who will be eligible to receive the airdrops?
-The current plan is for those staking $ATOM, $HUAHUA, or $OSMO to receive the airdrops.
+If you are staking with a centralized exchanges validator such as Binance, Coinbase, etc, you will not receive the Cerberus Airdrop.
 :::
 
 ::: details How many airdrops will there be?

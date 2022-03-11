@@ -35,6 +35,7 @@ The following are necessary to build the Cerberus binary from the source. It wil
 ```bash:
 # update the local package list and install any available upgrades
 sudo apt-get update && sudo apt upgrade -y
+
 # install toolchain and ensure accurate time synchronization
 sudo apt-get install make build-essential gcc git jq chrony -y
 ```
@@ -48,6 +49,7 @@ Example using yum package manager. Going forward, the remainder of the documenta
 ```bash:
 # update the local package list and install any available upgrades
 sudo yum update && sudo yum upgrade -y
+
 # install toolchain and ensure accurate time synchronization
 sudo yum install make build-essential gcc git jq chrony -y
 ```
@@ -56,8 +58,11 @@ sudo yum install make build-essential gcc git jq chrony -y
 
 ```bash:
 cd $HOME && sudo wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
+
 sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+
 export PATH=$PATH:/usr/local/go/bin
+
 go version
 ```
 
@@ -79,7 +84,9 @@ Next, run the commands below.
 
 ```bash:
 git clone https://github.com/cerberus-zone/cerberus.git
+
 cd cerberus
+
 git checkout release/v1.0.0
 
 # this step may take several minutes to complete
@@ -114,7 +121,9 @@ After running the commands above, all node configuration files have been set up.
 In this section you will add peers to begin communicating with the Cerberus blockchain.
 
 ```bash
-PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/peers.txt | head -n 18 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
+PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/peers.txt | \
+head -n 20 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" \
+$HOME/.cerberus/config/config.toml -i
 ```
 
 ### Add Seeds nodes to config.toml
@@ -124,7 +133,9 @@ In this section you will add your seed servers that will ensure your validator n
 Run the command below to add seed servers.
 
 ```bash
-PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus/release/v1.0.0/networks/mainnet/seeds.txt | head -n 2 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$PEERS\"/" $HOME/.cerberus/config/config.toml -i
+SEEDS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/seeds.txt | \
+head -n 2 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$SEEDS\"/" \
+$HOME/.cerberus/config/config.toml -i
 ```
 
 ### Download the Genesis file
@@ -137,7 +148,9 @@ To download the genesis file, you will want to run the commands below. The genes
 
 ```bash:
 cd $HOME/.cerberus/config/
+
 wget -O $HOME/.cerberus/config/genesis.json \
+
 https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/genesis.json
 ```
 
@@ -177,7 +190,7 @@ Once you have successfully tested that your Cerberus validator will start, you w
 
 This section will walk you through how to run your Cerberus validator node as a service.
 
-#### 1. Creating the cerberusd.service file
+#### 1a. Creating the cerberusd.service file
 
 ```bash:
 # creates the cerberusd.service file and puts it in text editor mode
