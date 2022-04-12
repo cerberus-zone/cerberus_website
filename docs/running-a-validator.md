@@ -12,15 +12,9 @@ lang = "en-US"
     </a>
 </div>
 
-::: danger Cerberus chain not live
-The Cerberus chain is not live yet. This document previews how you will launch a validator once the chain is launched. See some of the areas marked in yellow are for things that will need to be updated once the chain goes live.
-:::
+## Table of Contents
 
 [[toc]]
-
-::: danger Cerberus chain not live
-The Cerberus chain is not live yet. This document previews how you will launch a validator once the chain is launched. See some of the areas marked in yellow are for things that will need to be updated once the chain goes live.
-:::
 
 ## Purpose of document
 
@@ -87,7 +81,9 @@ git clone https://github.com/cerberus-zone/cerberus.git
 
 cd cerberus
 
-git checkout release/v1.0.0
+git fetch -a
+
+git checkout v1.0.1
 
 # this step may take several minutes to complete
 make install && cd ~/go/bin && sudo cp cerberusd /usr/local/bin
@@ -103,7 +99,7 @@ This step will create all the configuration files needed to run your validator n
 
 ```bash:
 export MONIKER_NAME="Cerberus Validator"
-cerberusd init "${MONIKER_NAME}" --chain-id cerberus-1
+cerberusd init "${MONIKER_NAME}" --chain-id cerberus-chain-1
 ```
 
 You should see output similar to the image below.
@@ -121,8 +117,10 @@ After running the commands above, all node configuration files have been set up.
 In this section you will add peers to begin communicating with the Cerberus blockchain.
 
 ```bash
+cd $HOME/.cerberus/config/
+
 PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/peers.txt | \
-head -n 20 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" \
+head -n 14 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" \
 $HOME/.cerberus/config/config.toml -i
 ```
 
@@ -134,7 +132,7 @@ Run the command below to add seed servers.
 
 ```bash
 SEEDS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/seeds.txt | \
-head -n 2 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$SEEDS\"/" \
+head -n 1 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$SEEDS\"/" \
 $HOME/.cerberus/config/config.toml -i
 ```
 
@@ -150,7 +148,6 @@ To download the genesis file, you will want to run the commands below. The genes
 cd $HOME/.cerberus/config/
 
 wget -O $HOME/.cerberus/config/genesis.json \
-
 https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/genesis.json
 ```
 
@@ -339,7 +336,7 @@ cerberusd tx staking create-validator \
   --commission-max-rate 0.20 \
   --commission-rate 0.05 \
   --min-self-delegation 1 \
-  --chain-id "cerberus-1" \
+  --chain-id "cerberus-chain-1" \
   --moniker $MONIKER_NAME \
   --details "Enter a description about your validation" \
   --security-contact "security contact email" \
@@ -362,7 +359,7 @@ cerberusd tx staking create-validator \
   --commission-max-rate 0.20 \
   --commission-rate 0.05 \
   --min-self-delegation 1 \
-  --chain-id "cerberus-1" \
+  --chain-id "cerberus-chain-1" \
   --moniker $MONIKER_NAME \
   --details "The best validator company in the Cosmos" \
   --security-contact "soc_team@cerberus.zone" \
@@ -415,7 +412,7 @@ _**security-contact**_ you will add the security contact email address for your 
 
 ```bash
 cerberusd gentx <key-name> 4000000000000ucrbrus \
---chain-id cerberus-1 \
+--chain-id cerberus-chain-1 \
 --moniker=$MONIKER_NAME \
 --commission-max-change-rate=0.05 \
 --commission-max-rate=0.20 \

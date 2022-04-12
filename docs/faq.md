@@ -4,7 +4,7 @@ description = "Answers the most common questions about the Cerberus ($CRBRUS) Ai
 lang = "en-US"
 ---
 
-# Cerberus ($CRBRUS) Airdrop FAQ
+# Cerberus ($CRBRUS) FAQ
 
 <div style="text-align: center">
     <a href="https://twitter.com/CerberusZone" target="_blank" >
@@ -14,9 +14,21 @@ lang = "en-US"
 
 The purpose of this page is to answer the most common questions we are receiving about the $CRBRUS airdrop.
 
+::: tip Where can I buy Cerberus $CRBRUS?
+You can buy Cerberus here at ->
+<a href="https://frontier.osmosis.zone/?from=OSMO&to=CRBRUS" target="_blank"> Omsosis Frontier DEX</a>
+
+:::
+
+::: tip Next Airdrop
+
+- OSMO stakers will receive Cerberus airdrop on May 1, 2022
+- ATOM stakers airdrop will be announced towards the second half of this year
+  :::
+
 ::: danger CEX Validators
 
-If you are staking with a centralized exchanges validator such as Binance, Coinbase, etc you will not receive the Cerberus Airdrop.
+If you are staked with a centralized exchanges validator such as Binance, Coinbase, etc you will not receive the Cerberus Airdrop.
 :::
 
 ::: details When will the Cerberus main chain launch?
@@ -54,15 +66,15 @@ No there is no minimum you need staked of $HUAHUA, $ATOM, $OSMO
 At this time, we don't have a specific set of validators that we are targetting for the airdrops. Our goal is to include as many people as possible in the airdrops. If we target a specific set of validators, we will let everyone know with plenty of time to validate to those validators if they choose to do so.
 :::
 
-::: details How do I stake $HUAHUA?
+::: details How do I stake Cerberus $CRBRUS?
 
-Check out this guide for how to stake $HUAHUA
+See this article
 
-<a href="https://www.figment.io/resources/chihuahua-staking-guide" target="_blank">Chihuahua: Staking Guide</a>
+<a href="https://artifact-staking.medium.com/claiming-the-cerberus-airdrop-and-staking-262b433aaf8c" target="_blank">Receiving the Cerberus Aidrop and Staking</a>
 
 :::
 
-::: details How do I know how much Cerberus ($CRBRUS) I will receive in the airdrop?
+::: details How do I know how much Cerberus ($CRBRUS)?
 
 Once we do the snapshots, we will know what ratio each person will receive in each airdrop.
 
@@ -79,9 +91,9 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 
 The airdrop dates have not been set yet.
 
-- Airdrop for $HUAHUA is TBD
-- Airdrop for $ATOM is TBD
-- Airdrop for $OSMO is TBD
+- Airdrop for $HUAHUA is March 15, 2022
+- Airdrop for $OSMO is May 1, 2022
+- Airdrop for $ATOM is - Will be announced at a future date
   :::
 
 ::: details What do you mean by the ratio that I will receive?
@@ -114,7 +126,7 @@ There will be separate snapshots for $HUAHUA, $ATOM, and $OSMO.
 
 ::: details If I am staking/delegating $HUAHUA, $ATOM, and $OSMO will I receive all three airdrops.
 
-Yes, you will receive all three airdrops because you are staking all three assets to help secure each network.
+You can stake $CRBRUS here -> <a href="https://stake.cerberus.zone/" target="_blank">Cerberus Web Wallet</a>
 
 :::
 
