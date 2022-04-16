@@ -92,8 +92,8 @@ Once we do the snapshots, we will know what ratio each person will receive in ea
 The airdrop dates have not been set yet.
 
 - Airdrop for $HUAHUA is March 15, 2022
-- Airdrop for $OSMO is May 1, 2022
-- Airdrop for $ATOM is - Will be announced at a future date
+- Airdrop for $OSMO is May 1, 2022 - 100 million $CRBRUS cap per wallet
+- Airdrop for $ATOM is - Will be announced at a future date - 100 million $CRBRUS cap per wallet
   :::
 
 ::: details What do you mean by the ratio that I will receive?
