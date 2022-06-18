@@ -120,11 +120,11 @@ In this section you will add peers to begin communicating with the Cerberus bloc
 cd $HOME/.cerberus/config/
 
 PEERS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/peers.txt | \
-head -n 14 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" \
+head -n 32 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/persistent_peers = \"\"/persistent_peers = \"$PEERS\"/" \
 $HOME/.cerberus/config/config.toml -i
 ```
 
-### Add Seeds nodes to config.toml
+<!-- ### Add Seeds nodes to config.toml
 
 In this section you will add your seed servers that will ensure your validator node has the addresses of all new validators that come online.
 
@@ -134,7 +134,7 @@ Run the command below to add seed servers.
 SEEDS=$(curl https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/seeds.txt | \
 head -n 1 | sed 's/$/,/' | tr -d '\n' | sed '$ s/.$//'); sed "s/seeds = \"\"/seeds = \"$SEEDS\"/" \
 $HOME/.cerberus/config/config.toml -i
-```
+``` -->
 
 ### Download the Genesis file
 
