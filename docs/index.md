@@ -19,6 +19,10 @@ The purpose of this page is to answer the most common questions we are receiving
 If you are staked with a centralized exchanges validator such as Binance, Coinbase, etc you will not receive the Cerberus Airdrop.
 :::
 
+::: tip Want to contribute to the codebase and join the open source team as a core dev?
+Email us <a href="mailto:hadeshounds@cerberus.zone" target="_blank"> here</a>
+:::
+
 ::: tip How can I get REWARDS for providing liquidity?
 You can get both internal and external incentives -> <a href="https://app.osmosis.zone/pool/662" target="_blank"> CRBRUS/OSMO Pool</a>
 

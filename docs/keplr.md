@@ -46,27 +46,25 @@ Once you have done that, Cerberus should no longer appear in your list of networ
 
 ## Add Cerberus network
 
-Next, you will get Cerberus added back to your Keplr wallet. This step is pretty straightforward. You can use any staking wallets listed below to get Cerberus added back to your wallet. We will use the BitSong web wallet in this example, but the steps are similar for all the wallets.
+Next, you will get Cerberus added back to your Keplr wallet. This step is pretty straightforward. You can use any staking wallets listed below to get Cerberus added back to your wallet. We will use the OmniFlix web wallet in this example, but the steps are similar for all the wallets.
 
-<a href="https://wallet.bitsong.io" target="_blank">BitSong Staking Wallet</a>
-
-<a href="https://cerberus.goatlabs.zone" target="_blank">Goatlab Staking Wallet</a>
+<a href="https://cerberus.omniflix.co" target="_blank">OmniFlix Staking Wallet</a>
 
 <a href="https://stake.cerberus.zone" target="_blank">Cerberus Staking Wallet</a>
 
-### Using BitSong to add Cerberus to Keplr
+### Using OmniFlix to add Cerberus to Keplr
 
-Once you are on the BitSong wallet, be sure you have selected Cerberus as your network. Then you will choose _Keplr Browser Extension_. See the screenshot below.
+Once you are on the OmniFlix wallet, click connect in the upper right-hand corner.
 
 <div style="">
     <a href="keplr/keplr-4.png" target="_blank">
-        <img :src="$withBase('keplr/keplr-4.png')" alt="Cerberus" style="width:250px;">
+        <img :src="$withBase('keplr/keplr-4.png')" alt="Cerberus" style="width:950px;">
     </a>
 </div>
 
 ### Check Add Request
 
-After you click the _Keplr Browser Extension_ option, you see the screenshot below. Next, you should select the _Approve_ button.
+After you click the connect button you will be presented with the screen below. Next, select the _Approve_ button.
 
 <div style="">
     <a href="keplr/keplr-5.png" target="_blank">
